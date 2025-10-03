@@ -184,10 +184,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<Nop>')
-vim.keymap.set('n', '<right>', '<Nop>')
-vim.keymap.set('n', '<up>', '<Nop>')
-vim.keymap.set('n', '<down>', '<Nop>')
+-- vim.keymap.set('n', '<left>', '<Nop>')
+-- vim.keymap.set('n', '<right>', '<Nop>')
+-- vim.keymap.set('n', '<up>', '<Nop>')
+-- vim.keymap.set('n', '<down>', '<Nop>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -308,6 +308,8 @@ require('lazy').setup({
       -- delay between pressing a key and opening which-key (milliseconds)
       -- this setting is independent of vim.o.timeoutlen
       delay = 0,
+      preset = 'helix',
+      sort = { 'alphanum' },
       icons = {
         -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
@@ -351,7 +353,7 @@ require('lazy').setup({
         { '<leader>c', group = '[C]ode' },
         { '<leader>f', group = '[F]ind' },
         { '<leader>g', group = '[G]it' },
-        { '<leader>u', group = '[U]I' },
+        { '<leader>u', group = '[U]i' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       },
@@ -901,7 +903,19 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      --  vim.cmd.colorscheme 'tokyonight-night'
+    end,
+  },
+
+  {
+    'rebelot/kanagawa.nvim',
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require('kanagawa').setup {
+        commentStyle = { italic = false },
+      }
+      vim.cmd 'colorscheme kanagawa-wave'
     end,
   },
 
