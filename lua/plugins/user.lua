@@ -30,13 +30,7 @@ return {
         maps.n["<leader>,"] = { function() require("snacks").picker.buffers() end, desc = "Find buffers" }
       end,
     },
-    -- {
-    --   "<Leader><space>",
-    --   function() Snacks.picker.smart() end,
-    --   desc = "Smart Find Files",
-    -- },
   },
-  -- { "nvim-neo-tree/neo-tree.nvim", enabled = false },
   -- == Examples of Adding Plugins ==
   --
   -- "andweeb/presence.nvim",
