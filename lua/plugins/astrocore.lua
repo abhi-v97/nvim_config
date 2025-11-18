@@ -63,13 +63,16 @@ return {
         -- ["<leader>/"] = { function() require("snacks").picker.grep() end, desc = "Grep" },
         -- ["<leader>,"] = { function() require("snacks").picker.buffers() end, desc = "Find buffers" },
         ["<leader><space>"] = false,
-        ["<leader>/"] = false,
+        ["<Leader>/"] = false,
         ["<leader>,"] = false,
         ["<leader>o"] = false,
         ["<leader>R"] = false,
 
         -- setting a mapping to false will disable it
         -- ["<C-S>"] = false,
+      },
+      x = {
+        ["<Leader>/"] = false,
       },
     },
   },

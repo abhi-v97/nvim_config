@@ -5,7 +5,7 @@ return {
   config = function()
     require("rose-pine").setup {
       variant = "main",
-      dim_inactive_windows = true,
+      dim_inactive_windows = false,
 
       styles = {
         bold = true,
